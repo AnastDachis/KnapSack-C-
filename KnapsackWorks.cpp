@@ -45,7 +45,7 @@ int main() {
             
             else if (i == (no * 3) + 1) {c = line;}
             //the last number of the text is the weight of the sack
-            //explanation:if the items are no=10 (10)*3(nubmer,value,weight)=30
+            //explanation:if the items are no=10 (10) * 3(number,value,weight)=30
             
             else {
                 if (i % 3 == 1) { x=line;}
