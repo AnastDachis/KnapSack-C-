@@ -48,9 +48,11 @@ int main() {
             //explanation:if the items are no=10 (10) * 3(number,value,weight)=30
             
             else {
-                if (i % 3 == 1) { x=line;}
-                else if (i % 3 == 2) {value.push_back(line);}
-                else { weight.push_back(line);} 
+                  //if (i % 3 == 1) { number of current item=line;}
+                  if (i % 3 == 2) {value.push_back(line);}
+                  //to find the value we search for the second number
+                  else if(i%3!=1){weight.push_back(line);} 
+                  //and for the weights the third 
             }
             i++;
         }
@@ -69,8 +71,13 @@ int main() {
          for (int i = 0; i <= no; i++) {
             for (int w = 0; w <= c; w++){
                 if (i == 0 || w == 0){ kp[i][w]=0;}
+              //for 0 items or 0 weight we cant have something better than 0
                 else if (weight[i - 1] <= w){kp[i][w]=max(value[i - 1] + kp[i - 1][w - weight[i - 1]], kp[i - 1][w]);}
+              //if the condition is meet,  
+              //if the previous max < value 
+              //max <-- value
                 else{kp[i][w]=kp[i - 1][w];}
+              //or else the previous max => max
             }  
         }
         cout << kp[no][c]<<endl; 
