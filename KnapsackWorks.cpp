@@ -12,7 +12,7 @@ int max(int a, int b) { return (a > b)? a : b; }
 
 int main() {
     string l;
-    int i = 0, c, no, x, line;
+    int i = 0, c, no, line;
     //declaration of variables
     
     std::vector<int>value;
