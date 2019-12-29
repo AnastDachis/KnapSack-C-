@@ -1,8 +1,5 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <functional>
+#include <bits/stdc++.h>
+#include<chrono>
 using namespace std;
 
  
@@ -11,6 +8,7 @@ int max(int a, int b) { return (a > b)? a : b; }
 
 
 int main() {
+    auto start = chrono::high_resolution_clock::now();//for recording execution time
     string l;
     int i = 0, c, no, line;
     //declaration of variables
@@ -86,6 +84,15 @@ int main() {
     }
     else cout << "Unable to open file"; 
    //if the file does not exist
-    
+      
+    auto end = chrono::high_resolution_clock::now();//thats the end of the program execution
+    double time_taken = chrono::duration_cast<chrono::nanoseconds>(end - start).count(); 
+  
+    time_taken *= 1e-9; 
+  
+    cout << "Time taken by program is : " << fixed  
+         << time_taken << setprecision(9); 
+    cout << " sec" << endl;
+ 
     return 0;
 }
