@@ -73,10 +73,12 @@ int main() {
                 else{kp[i][w]=kp[i - 1][w];}
             }  
         }
-        cout << kp[no][c]<<endl;
+        cout << kp[no][c]<<endl; 
+        //the best solution to our problem is this
         
     }
-    else cout << "Unable to open file";
+    else cout << "Unable to open file"; 
+   //if the file does not exist
     
     return 0;
 }
