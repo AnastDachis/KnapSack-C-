@@ -71,7 +71,7 @@ int main() {
                 if (i == 0 || w == 0){ kp[i][w]=0;}
               //for 0 items or 0 weight we cant have something better than 0
                 else if (weight[i - 1] <= w){kp[i][w]=max(value[i - 1] + kp[i - 1][w - weight[i - 1]], kp[i - 1][w]);}
-              //if the condition is meet,  
+              //if the condition is met,  
               //if the previous max < value 
               //max <-- value
                 else{kp[i][w]=kp[i - 1][w];}
