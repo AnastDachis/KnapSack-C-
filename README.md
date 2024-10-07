@@ -1,4 +1,4 @@
-# Problem with backpack 
+# Knapsack Problem
 
 This program solves the knapsack problem using dynamic programming.
 
