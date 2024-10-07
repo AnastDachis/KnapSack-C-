@@ -1,36 +1,35 @@
-# Knapsack Problem 
+# Problem with backpack 
 
-Αυτό το πρόγραμμα λύνει το πρόβλημα του σακιού χρησιμοποιώντας τον δυναμικό προγραμματισμό.
+This program solves the knapsack problem using dynamic programming.
 
-## Το πρόγραμμα χωρίζεται σε δύο τμήματα:
-- Ο κώδικας KnapsackWorks.cpp είναι η δική μου υλοποίηση του αλγορίθμου, που λαμβάνει ως είσοδο ένα αρχείο .txt και επιλύει το πρόβλημα.
-- Ο κώδικας generator.c μου δόθηκε από τον καθηγητή και δεν αποτελεί μέρος της υλοποίησής μου. Χρησιμοποιείται μόνο για την παραγωγή των αρχείων εισόδου με δεδομένα
-για το πρόβλημα του σακιού.
+## The program is divided into two parts:
+- The KnapsackWorks.cpp code is my own implementation of the algorithm, which takes as input a file and .txt
+- The generator.c code was given to me by the professor and is not part of my implementation. It is only used to generate the input files with data
+about the sack problem.
 
-### Οδηγίες χρήσης
-Προαπαιτούμενα
-Για να τρέξει το πρόγραμμα, απαιτείται να έχεις έναν μεταγλωττιστή C++ εγκατεστημένο στο σύστημά σου, όπως ο g++.
+### Instructions for use
+Prerequisites
+To run the program, you need to have a C++ compiler installed on your system.
 
-### Τρόπος χρήσης
-Μεταγλώττιση του προγράμματος: Μπορείς να μεταγλωττίσεις το πρόγραμμα με την ακόλουθη εντολή:
+### How to use
+Compile the program: You can compile the program with the following command:
 
 g++ -o knapsack KnapsackWorks.cpp
 
-#### Εκτέλεση του προγράμματος: Μετά τη μεταγλώττιση, εκτέλεσε το πρόγραμμα με την παρακάτω εντολή:
+#### Run the program: After compiling, run the program with the following command:
 
 ./knapsack
-Στη συνέχεια, θα σου ζητηθεί να εισάγεις το όνομα του αρχείου εισόδου.
+You will then be prompted to enter the name of the input file.
 
-Αρχείο εισόδου: Το πρόγραμμα δέχεται ένα αρχείο .txt ως είσοδο. Η μορφή του αρχείου πρέπει να είναι η εξής:
+Input file: The program accepts a .txt file as input. The file format should be as follows:
+The first line contains the number of objects.
+The following lines contain information for each object in groups of 3 lines:
+- Item number 
+- Item value
+- Item weight
 
-Η πρώτη γραμμή περιέχει τον αριθμό των αντικειμένων.
-Οι επόμενες γραμμές περιέχουν πληροφορίες για κάθε αντικείμενο σε ομάδες των 3 γραμμών:
-- Αριθμός αντικειμένου 
-- Αξία του αντικειμένου
-- Βάρος του αντικειμένου
-
-#### Η τελευταία γραμμή περιέχει τη χωρητικότητα του σακιού.
-Παράδειγμα περιεχομένων αρχείου:
+#### The last line contains the capacity of the bag.
+Example file contents:
 
 * 10
 * 1 42 31
@@ -45,16 +44,16 @@ g++ -o knapsack KnapsackWorks.cpp
 * 10 34 12
 * 50
 
-#### Παραγωγή εξόδου: Το πρόγραμμα θα διαβάσει τα δεδομένα από το αρχείο και θα επιστρέψει την καλύτερη δυνατή αξία που μπορεί να μεταφέρει ο σάκος, μαζί με τον χρόνο εκτέλεσης.
+#### Produce output: The program will read the data from the file and return the best possible value that the bag can carry, along with the execution time.
 
-#### Σημειώσεις
-Η συνάρτηση max(int a, int b) χρησιμοποιείται για να υπολογίσει τη μέγιστη αξία ανάμεσα σε δύο επιλογές: να συμπεριληφθεί ή όχι ένα αντικείμενο στο σάκο.
-Το πρόγραμμα εκμεταλλεύεται την τεχνική του δυναμικού προγραμματισμού για να αποθηκεύει τα αποτελέσματα υποπροβλημάτων και να αποφύγει την επαναυπολογιστική διαδικασία.
-Ο κώδικας generator.c είναι βοηθητικός και χρησιμοποιείται για τη δημιουργία αρχείων εισόδου, και δεν συνδέεται άμεσα με την υλοποίηση του αλγορίθμου.
+#### Notes
+The function max(int ​​a, int b) is used to calculate the maximum value between two options: to include or not to include an object in the bag.
+The program exploits the dynamic programming technique to store subproblem results and avoid the recomputation process.
+The generator.c code is auxiliary and is used to generate input files, and is not directly related to the implementation of the algorithm.
 
-##### Παράδειγμα εκτέλεσης
+##### Example execution
 $ ./knapsack
-Δώσε το όνομα του αρχείου: problem_10_50_1_1_5.txt
+Give the file name: problem_10_50_1_1_5.txt
 
 * 1 - 42 - 31
 * 2 - 42 - 42
@@ -67,8 +66,9 @@ $ ./knapsack
 * 9 - 44 - 19
 * 10 - 34 - 12
 
-Μέγιστη αξία: 123
-Χρόνος εκτέλεσης του προγράμματος: 0.000100 sec
 
-#### Χρόνος εκτέλεσης
-Το πρόγραμμα χρησιμοποιεί τη βιβλιοθήκη <chrono> για να μετρήσει τον χρόνο εκτέλεσης. Ο χρόνος εκτέλεσης εμφανίζεται στο τέλος κάθε εκτέλεσης με ακρίβεια νανοδευτερολέπτων.
+Maximum value: 123
+Program execution time: 0.000100 sec
+
+#### Execution time
+The program uses the <chrono> library to measure execution time.
